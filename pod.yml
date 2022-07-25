@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kenv
+  labels:
+    kenv: kenv
+spec:
+  containers:
+    - name: kenv
+      image: kenv
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 9090

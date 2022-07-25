@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: kenv-service
+spec:
+  selector:
+    kenv: kenv
+  ports:
+    - port: 9090
+      targetPort: 9090

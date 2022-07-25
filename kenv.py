@@ -12,7 +12,7 @@ class KEnvHandler(BaseHTTPRequestHandler):
         self.end_headers()
         kv_env = self.getenv()
         kv_sys = self.sysinfo()
-        kv = {'sysinfo': kv_sys, 'environment':kv_env}
+        kv = {'sysinfo': kv_sys, 'environment': kv_env}
         self.wfile.write(json.dumps(kv).encode('utf-8'))
 
     def getenv(self):
