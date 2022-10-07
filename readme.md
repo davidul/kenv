@@ -9,10 +9,32 @@ Building docker image
 docker build -t kenv .
 ```
 
+Or use a make command
+
+```shell
+make build
+```
+
+## Execution
+
+You can run either in server mode or just simply command line.
+In server mode HTTP server will be started.
+
+Simple execution
+```shell
+python kenv.py
+```
+
 Execute in docker
 
 ```shell
-docker run -p 9090:9090 kenv
+docker run kenv
+```
+
+Execute in docker in server mode
+
+```shell
+docker run -p 9090:9090 kenv --server=y
 ```
 
 Query `http://localhost:9090`, sample response
@@ -42,6 +64,11 @@ Query `http://localhost:9090`, sample response
         "HOME": "/root"
     }
 }
+```
+Pass it to ```jq``` to get nice output
+
+```shell
+curl http://localhost:9090 | jq
 ```
 
 ## K8s
